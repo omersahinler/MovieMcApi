@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  MovieAPI.api:
+    container_name: MovieAPI
+    image: ${DOCKER_REGISTRY-}MovieAPI
+    build:
+      context: .
+      dockerfile: src/Presentation/MovieAPI.Api/Dockerfile
+
+  s_sqlserver:
+    container_name: MovieAPI_sqlserver
+    image: mcr.microsoft.com/mssql/server:2019-latest
